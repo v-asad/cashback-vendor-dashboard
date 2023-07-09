@@ -73,11 +73,35 @@ const Profile = () => {
   const [swiftCode, setSwiftCode] = useState('')
   const [gallery, setGallery] = useState([])
   const [cmpLogo, setCmpLogo] = useState('')
+
   const [uploadLogo, setUploadLogo] = useState(null)
   const [uploadGallery, setUploadGallery] = useState([])
   const [deleteModalOpen, setDeleteModalOpen] = useState(false)
   const [id, setId] = useState(null)
   const [open, setOpen] = useState(false)
+
+  // const [user, setUser] = useState({
+  //   // profile: [],
+  //   companyregno: '',
+  //   username: '',
+  //   firstname: '',
+  //   commisionper: 0,
+  //   creditlimit: 0,
+  //   email: '',
+  //   address: '',
+  //   lendmark: '',
+  //   telephone: '',
+  //   phonecode: '',
+  //   description: '',
+  //   accountName: '',
+  //   accountNo: '',
+  //   bankName: '',
+  //   branchName: '',
+  //   swiftCode: '',
+  //   gallery: [],
+  //   cmpLogo: ''
+  // })
+  const descriptionElementRef = useRef(null)
   useEffect(() => {
     if (open) {
       const { current: descriptionElement } = descriptionElementRef
@@ -97,11 +121,14 @@ const Profile = () => {
         })
         .then(response => {
           let user = response.data
+          // setUser(response.data)
+          console.table(user)
+
           setCompanyregno(user.company_reg_no || '')
           setUsername(user.username || '')
           setFirstname(user.first_name || '')
           setCommisionper(user.commission_percent || 0)
-          setCreditlimit(user.credit_limit || '')
+          setCreditlimit(user.credit_limit || 0)
           setEmail(user.email || '')
           setAddress(user.address || '')
           setLendmark(user.lendmark || '')
@@ -113,7 +140,7 @@ const Profile = () => {
           setBankName(user.bank_nm || '')
           setBranchName(user.branch_nm || '')
           setSwiftCode(user.swift_code || '')
-          setGallery(user.file || [])
+          // setGallery(user.file || [])
           setCmpLogo(user.cmp_logo || '')
           setProfile(user)
         })
@@ -132,7 +159,6 @@ const Profile = () => {
   //----------
   //  Refs
   //----------
-  const descriptionElementRef = useRef(null)
 
   const submitLogoHandler = () => {
     // Create a new FormData object to store the logo file

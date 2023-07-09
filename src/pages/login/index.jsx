@@ -11,7 +11,6 @@ import {
   TextField,
   InputLabel,
   IconButton,
-  Box,
   FormControl,
   useMediaQuery,
   OutlinedInput,
@@ -22,7 +21,7 @@ import {
   Typography,
   Card,
   Divider
-} from '@mui/material/Button'
+} from '@mui/material'
 
 //----------
 //  Icon Imports
@@ -43,7 +42,7 @@ import * as yup from 'yup'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { toast } from 'react-hot-toast'
-
+import Box from '@mui/material/Box'
 //----------
 //  Styled Components
 //----------
