@@ -54,6 +54,7 @@ const Profile = () => {
     <>
       <Grid container spacing={6}>
         <h2>TERMS & CONDITIONS</h2>
+        
         <Typography>{data.description}</Typography>
       </Grid>
     </>
