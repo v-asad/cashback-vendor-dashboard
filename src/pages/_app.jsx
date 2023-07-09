@@ -67,9 +67,6 @@ import 'prismjs/components/prism-tsx'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import 'src/iconify-bundle/icons-bundle-react'
 
-// ** React Image Crop
-import 'react-image-crop/dist/ReactCrop.css'
-
 //----------
 //  Global CSS Styles
 //----------
@@ -80,7 +77,6 @@ const clientSideEmotionCache = createEmotionCache()
 // Set application language
 if (typeof window !== 'undefined') {
   let setLang = localStorage.localization || process.env.NEXT_PUBLIC_LANG
-  console.log(process.env.NEXT_PUBLIC_LANG)
   localStorage.setItem('localization', setLang)
 
   var url_string = window.location.href

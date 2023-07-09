@@ -66,7 +66,6 @@ const AuthProvider = ({ children }) => {
       })
       .then(resp => {
         let response = resp.data.data
-        // console.log(response);
         const user = {
           id: response.id,
           username: response.username,
